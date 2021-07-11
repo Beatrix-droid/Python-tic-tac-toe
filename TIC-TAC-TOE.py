@@ -1,6 +1,3 @@
-
-
-
 #TIC TAC TOE
 
 board = [[0, 0, 0],
@@ -11,8 +8,6 @@ def game(board):
 	i = 1
 	for row in board:
 		print(row)
-
-
 
 	for row in board:
 		while i < 9:
@@ -33,70 +28,48 @@ def game(board):
 					if i % 2 == 1:
 							board[row_position][column_position] = "X"
 							i += 1
-							print(board[0])
-							print(board[1])
-							print(board[2])
 					elif i % 2 == 0:
 							board[row_position][column_position] = "*"
 							i += 1
 
-							print(board[0])
-							print(board[1])
-							print(board[2])
-				continue
-		for row in board:
+					print(board[0])
+					print(board[1])
+					print(board[2])
+
+				for row in board:
 					if row == ["X", "X", "X"]:
-						for row in board:
-							print(row)
-						break
-						return "Player X has Won!"
-
+						print("Player X has Won!")
+						i = 9
 					elif row == ["*", "*", "*"]:
-						for row in board:
-							print(row)
-						break
-						return "Player * has Won!"
+						print("Player * has Won!")
+						i = 9
 
-
-		for j in range(0, 3):
-					if board[0][j] == board[1][j] == board[2][j] == "X":
-						for row in board:
-							print(row)
-
-						return "Player X has Won!"
-
-		for j in range(0, 3):
-					if board[0][j] == board[1][j] == board[2][j] == "*":
-						for row in board:
-							print(row)
-						break
-					return "Player * has Won!"
-
-		if board[0][0] == board[1][1] == board[2][2] == "*":
-					for row in board:
-						print(row)
-					return "Player * has Won!"
-
-		if board[0][0] == board[1][1] == board[2][2] == "X":
-					for row in board:
-						print(row)
-					return "Player X has Won!"
-
-
-		if board[2][0] == board[1][1] == board[0][2] == "*":
-					for row in board:
-						print(row)
-					break
-					return "Player * has Won!"
-
-		if board[2][0] == board[1][1] == board[0][2] =="X":
-					for row in board:
-						print(row)
-					break
-					return "Player X has Won!"
+					else:
+						for j in range(0, 3):
+							if board[0][j] == board[1][j] == board[2][j] == "X":
+								print("Player X has Won!")
+								i = 9
+							elif board[0][j] == board[1][j] == board[2][j] == "*":
+								print("Player * has Won!")
+								i = 9
+						if board[0][0] == board[1][1] == board[2][2] == "X":
+							print("Player X has Won!")
+							i = 9
+						if board[0][0] == board[1][1] == board[2][2] == "*":
+							print("Player * has Won!")
+							i = 9
+						if board[2][0] == board[1][1] == board[0][2] == "*":
+							print("Player * has Won!")
+							i = 9
+						if board[2][0] == board[1][1] == board[0][2] =="X":
+							print("Player X has Won!")
+							i = 9
+						else:
+							continue
 
 		#else:
 		#	if "0" not in board:
 		#		print("it's a Tie!")
 
 game(board)
+#print(game(board))
